@@ -34,13 +34,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity twoToOneMUX is
     Port ( i_sel : in STD_LOGIC;
            i_inputOne : in STD_LOGIC_VECTOR (7 downto 0);
-           i_inputTwo : in STD_LOGIC_VECTOR (7 downto 0);
-           i_out : in STD_LOGIC_VECTOR (7 downto 0));
+           i_inputZero : in STD_LOGIC_VECTOR (7 downto 0);
+           o_out : out STD_LOGIC_VECTOR (7 downto 0));
 end twoToOneMUX;
 
 architecture Behavioral of twoToOneMUX is
 
 begin
+    o_out <= i_inputOne when (i_sel = '1') else 
+             i_inputZero when (i_sel = '0') else
+             i_inputOne;
 
 
 end Behavioral;

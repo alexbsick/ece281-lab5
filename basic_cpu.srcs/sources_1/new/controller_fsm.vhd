@@ -53,5 +53,4 @@ begin
             "0100" when s_Result,
             "1000" when s_Off,
             "0100" when others;
-
 end Behavioral;

@@ -37,12 +37,15 @@ entity aluFourToOneMUX is
            i_inTwo : in STD_LOGIC_VECTOR (7 downto 0);
            i_inThree : in STD_LOGIC_VECTOR (7 downto 0);
            i_inFour : in STD_LOGIC_VECTOR (7 downto 0);
-           i_out : out STD_LOGIC_VECTOR (7 downto 0));
+           o_out : out STD_LOGIC_VECTOR (7 downto 0));
 end aluFourToOneMUX;
 
 architecture Behavioral of aluFourToOneMUX is
 
 begin
-
-
+    o_out <= i_inOne when (i_op(1) = '0' and i_op(0) = '0') else 
+             i_inTwo when (i_op(1) = '0' and i_op(0) = '1') else
+             i_inThree when (i_op(1) = '1' and i_op(0) = '0') else
+             i_inFour when (i_op(1) = '1' and i_op(0) = '1') else
+             i_inOne;
 end Behavioral;

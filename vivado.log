@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Apr 29 10:01:49 2024
-# Process ID: 11500
+# Start of session at: Mon Apr 29 20:39:41 2024
+# Process ID: 18768
 # Current directory: C:/Users/Alexander.Sick/Vivado/ece281-lab5
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25092 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21952 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
 # Log file: C:/Users/Alexander.Sick/Vivado/ece281-lab5/vivado.log
 # Journal file: C:/Users/Alexander.Sick/Vivado/ece281-lab5\vivado.jou
 #-----------------------------------------------------------
@@ -16,5 +16,3 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 797.523 ; gain = 62.219
-update_compile_order -fileset sources_1

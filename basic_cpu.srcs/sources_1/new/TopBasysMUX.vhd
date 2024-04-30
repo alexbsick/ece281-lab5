@@ -43,6 +43,9 @@ end TopBasysMUX;
 architecture Behavioral of TopBasysMUX is
 
 begin
-
-
+    o_bin <= i_A when (i_cycle = "0001") else 
+             i_B when (i_cycle = "0010") else
+             i_result when (i_cycle = "0100") else
+             i_off when (i_cycle = "1000") else
+             i_A;
 end Behavioral;
