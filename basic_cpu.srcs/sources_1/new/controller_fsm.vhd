@@ -33,15 +33,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity controller_fsm is
     Port ( i_reset : in STD_LOGIC;
+           i_clk: in STD_LOGIC;
            i_adv : in STD_LOGIC;
            o_cycle : out STD_LOGIC_VECTOR (3 downto 0));
 end controller_fsm;
 
 architecture Behavioral of controller_fsm is
     type sm_cycle is (s_A_input, s_B_input, s_Result, s_Off);
-    signal f_Q : sm_cycle;
+    signal f_Q, f_Q_next : sm_cycle;
 begin
-    f_Q <= s_A_input when (i_adv = '1' and f_Q = s_Off) else
+    f_Q_next <= s_A_input when (i_adv = '1' and f_Q = s_Off) else
            s_B_input when (i_adv = '1' and f_Q = s_A_input) else
            s_Result when (i_adv = '1' and f_Q = s_B_input) else
            s_Off when (i_adv = '1' and f_Q = s_Result)
@@ -53,4 +54,17 @@ begin
             "0100" when s_Result,
             "1000" when s_Off,
             "0100" when others;
+clock_process: process (i_adv, i_clk, i_reset)
+    begin
+    --Asynchronous reset
+    if (i_reset = '1') then
+        f_Q <= s_A_input;
+    else if (i_adv = '1' and rising_edge(i_clk)) then
+        f_Q <= f_Q_next;
+    else 
+        f_Q <= f_Q;
+    end if;
+    end if;
+end process clock_process;
+
 end Behavioral;

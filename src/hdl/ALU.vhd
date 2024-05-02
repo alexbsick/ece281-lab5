@@ -79,7 +79,6 @@ signal w_adder_operand: std_logic_vector(7 downto 0);
 signal not_i_B: std_logic_vector(7 downto 0);
 signal adder_output: std_logic_vector(7 downto 0);
 signal w_Cout: std_logic;
-signal w_Cout_ind: std_logic;
 signal w_left_shift: std_logic_vector(7 downto 0);
 signal w_right_shift: std_logic_vector(7 downto 0);
 signal w_shift_amt: std_logic_vector(2 downto 0);
@@ -126,8 +125,7 @@ begin
 	
 	-- CONCURRENT STATEMENTS ----------------------------
 	not_i_B <= not i_B;
-	w_Cout_ind <= i_op(1) nor i_op(0);
-	o_flags(2) <= w_Cout and w_Cout_ind;
+	o_flags(0) <= w_Cout when (i_op(1 downto 0) = "00");
 	w_shift_amt(2) <= i_B(2);
 	w_shift_amt(1) <= i_B(1);
 	w_shift_amt(0) <= i_B(0);
@@ -139,6 +137,7 @@ begin
     w_OR <= i_A or i_B;
     w_AND <= i_A and i_B;
     o_result <= w_alu_result;
-    o_flags(0) <= w_alu_result(7);
-    o_flags(1) <= '0' when (w_alu_result = "00000000");
+    o_flags(2) <= w_alu_result(7);
+    o_flags(1) <= '1' when (w_alu_result = "00000000") else
+                   '0';
 end behavioral;
