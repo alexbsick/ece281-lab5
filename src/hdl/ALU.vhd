@@ -42,7 +42,7 @@ entity ALU is
            i_A: in std_logic_vector(7 downto 0);
            i_B: in std_logic_vector(7 downto 0);
            o_result: out std_logic_vector(7 downto 0);
-           o_flags: out std_logic_vector(2 downto 0)
+           o_flags: out std_logic_vector(3 downto 0)
     );
 end ALU;
 
@@ -86,6 +86,9 @@ signal w_shift_result: std_logic_vector(7 downto 0);
 signal w_OR: std_logic_vector(7 downto 0);
 signal w_AND: std_logic_vector(7 downto 0);
 signal w_alu_result: std_logic_vector(7 downto 0);
+signal w_over1: std_logic;
+signal w_over2: std_logic;
+signal w_op: std_logic_vector(2 downto 0);
   
 begin
 	-- PORT MAPS ----------------------------------------
@@ -125,10 +128,10 @@ begin
 	
 	-- CONCURRENT STATEMENTS ----------------------------
 	not_i_B <= not i_B;
-	o_flags(0) <= w_Cout when (i_op(1 downto 0) = "00");
 	w_shift_amt(2) <= i_B(2);
 	w_shift_amt(1) <= i_B(1);
 	w_shift_amt(0) <= i_B(0);
+	w_op <= i_op;
 	--Documentation for the left and right shift functions were found
 	--here: https://nandland.com/shift-left-shift-right/
 	--I also had some odd errors that ChatGPT fixed in terms of syntax
@@ -137,7 +140,11 @@ begin
     w_OR <= i_A or i_B;
     w_AND <= i_A and i_B;
     o_result <= w_alu_result;
-    o_flags(2) <= w_alu_result(7);
-    o_flags(1) <= '1' when (w_alu_result = "00000000") else
+    w_over1 <= w_alu_result(7) and not i_A(7) and not i_B(7);
+    w_over2 <= i_A(7) and i_B(7) and not w_alu_result(7);
+    o_flags(3) <= w_alu_result(7); --Negative
+    o_flags(2) <= '1' when (w_alu_result = "00000000") else -- Zero
                    '0';
+    o_flags(1) <= w_Cout and not w_op(1) and not w_op(0); --Carryout
+    o_flags(0) <= (w_over1 xor w_over2) when (i_op(1 downto 0) = "00"); 
 end behavioral;

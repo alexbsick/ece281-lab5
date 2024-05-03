@@ -54,7 +54,7 @@ component ALU is
            i_A: in std_logic_vector(7 downto 0);
            i_B: in std_logic_vector(7 downto 0);
            o_result: out std_logic_vector(7 downto 0);
-           o_flags: out std_logic_vector(2 downto 0)
+           o_flags: out std_logic_vector(3 downto 0)
     );
 end component;
 
@@ -98,7 +98,7 @@ end component;
 
 component clock_divider is
     generic ( constant k_DIV : natural := 2	); -- How many clk cycles until slow clock toggles									   -- Effectively, you divide the clk double this 
-	--In the instance, the k_DIV should be 40000 to account for twice as many
+	--In the instance, the k_DIV should be 80000 to account for twice as many
 	--anodes as in Lab 4 and only changing on the rising edge	
 											   -- number (e.g., k_DIV := 2 --> clock divider of 4)
 	port ( 	i_clk    : in std_logic;
@@ -135,12 +135,21 @@ component seg_MUX is
            o_seg : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
+component wire_Register is
+    port (
+        i_clk: in std_logic;
+        i_Sw: in std_logic_vector(7 downto 0);
+        i_reset: in std_logic;
+        o_wire: out std_logic_vector(7 downto 0)
+        );
+end component;
+
 signal w_cycle: std_logic_vector(3 downto 0);
 signal w_clk: std_logic;
 signal w_A: std_logic_vector(7 downto 0);
 signal w_B: std_logic_vector(7 downto 0);
 signal op_bits: std_logic_vector(2 downto 0);
-signal w_flags: std_logic_vector(2 downto 0);
+signal w_flags: std_logic_vector(3 downto 0);
 signal w_result: std_logic_vector(7 downto 0);
 signal w_bin: std_logic_vector(7 downto 0);
 signal w_negative: std_logic;
@@ -159,15 +168,8 @@ signal w_sign_on: std_logic_vector(3 downto 0);
 signal w_hund_on: std_logic_vector(3 downto 0);
 signal w_tens_on: std_logic_vector(3 downto 0);
 signal w_ones_on: std_logic_vector(3 downto 0);
-signal w_all_off1: std_logic_vector(3 downto 0);
-signal w_all_off2: std_logic_vector(3 downto 0);
-signal w_all_off3: std_logic_vector(3 downto 0);
-signal w_all_off4: std_logic_vector(3 downto 0);
+signal w_all_off: std_logic_vector(3 downto 0);
 signal w_fsm_clk: std_logic;
-
---display signals
---signal w_A_display: std_logic_vector(7 downto 0);
---signal w_B_display: std_logic_vector(7 downto 0);
   
 begin
 	-- PORT MAPS ----------------------------------------
@@ -185,30 +187,22 @@ begin
             i_reset => btnU,
             o_clk => w_clk
             );
-    --MAKE COMPONENTS FOR THE REGISTERS
-    register_A_proc: process (w_cycle(0))
-    begin
-        if (falling_edge(w_cycle(0))) then
-            w_A <= sw;
---        if (w_cycle(0) = '1') then
---            w_A_display <= sw;
---        else
---            w_A_display <= w_A_display;
---        end if;
-        end if;  
-    end process;
+            
+    register_A_inst: wire_Register
+        port map (
+            i_clk => w_cycle(0),
+            i_reset => btnU,
+            i_Sw => sw,
+            o_wire => w_A
+            );
     
-    register_B_proc: process (w_cycle(1))
-    begin
-        if (falling_edge(w_cycle(1))) then
-            w_B <= sw;
---        if (w_cycle(1) = '1') then
---            w_B_display <= sw;
---        else
---            w_B_display <= w_B_display;
---        end if;
-        end if;
-    end process;
+    register_B_inst: wire_Register
+        port map (
+            i_clk => w_cycle(1),
+            i_reset => btnU,
+            i_Sw => sw,
+            o_wire => w_B
+            );
     
     ALU_inst: ALU
         port map (
@@ -262,10 +256,10 @@ begin
             hund_on => w_hund_on,
             tens_on => w_tens_on,
             ones_on => w_ones_on,
-            all_off1 => w_all_off1,
-            all_off2 => w_all_off2,
-            all_off3 => w_all_off3,
-            all_off4 => w_all_off4,
+            all_off1 => w_all_off,
+            all_off2 => w_all_off,
+            all_off3 => w_all_off,
+            all_off4 => w_all_off,
             i_sel(2) => w_cycle(3),
             i_sel(1) => w_sel(1),
             i_sel(0) => w_sel(0),
@@ -295,18 +289,15 @@ begin
 	
 	-- CONCURRENT STATEMENTS ----------------------------
 	--anode_MUX signals
-	w_A <= sw when (w_cycle(0) = '1');
-	w_B <= sw when (w_cycle(1) = '1');
+	
+	
 	w_sign_on <= "0111";
 	w_hund_on <= "1011";
 	w_tens_on <= "1101";
 	w_ones_on <= "1110";
-	w_all_off1 <= "1111";
-	w_all_off2 <= "1111";
-	w_all_off3 <= "1111";
-	w_all_off4 <= "1111";
+	w_all_off <= "1111";
 	led(3 downto 0) <= w_cycle;
-	led(15 downto 13) <= w_flags when (w_cycle = "0100");
+	led(15 downto 12) <= w_flags when (w_cycle = "0100") else "0000";
 	op_bits <= sw(2 downto 0);
-	led(12 downto 4) <= "000000000";
+	led(11 downto 4) <= "00000000";
 end top_basys3_arch;
