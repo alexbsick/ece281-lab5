@@ -146,5 +146,8 @@ begin
     o_flags(2) <= '1' when (w_alu_result = "00000000") else -- Zero
                    '0';
     o_flags(1) <= w_Cout and not w_op(1) and not w_op(0); --Carryout
-    o_flags(0) <= (w_over1 xor w_over2) when (i_op(1 downto 0) = "00"); 
+    --For the overflow flag, I was having an error so I asked ChatGPT
+    --Link to chat: https://chat.openai.com/share/1a35a38d-ab6b-4f38-af17-f36e90e16fa3
+    o_flags(0) <= (w_over1 xor w_over2) when (i_op = "000" or i_op = "100") else
+                   '0' when (i_op = "001" or i_op = "010" or i_op = "011" or i_op = "101" or i_op = "110" or i_op = "111"); 
 end behavioral;
