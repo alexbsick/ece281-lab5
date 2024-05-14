@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue May  7 10:05:23 2024
-# Process ID: 30276
+# Start of session at: Wed May  8 10:15:56 2024
+# Process ID: 27964
 # Current directory: C:/Users/Alexander.Sick/Vivado/ece281-lab5
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11116 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12736 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
 # Log file: C:/Users/Alexander.Sick/Vivado/ece281-lab5/vivado.log
 # Journal file: C:/Users/Alexander.Sick/Vivado/ece281-lab5\vivado.jou
 #-----------------------------------------------------------
@@ -15,3 +15,29 @@ update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
+launch_simulation
+source ALU_tb.tcl
+close_sim
+synth_design -rtl -name rtl_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ALU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_design
+synth_design -rtl -name rtl_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_basys3 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1

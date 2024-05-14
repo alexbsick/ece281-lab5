@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue May  7 10:05:23 2024
-# Process ID: 30276
+# Start of session at: Wed May  8 10:15:56 2024
+# Process ID: 27964
 # Current directory: C:/Users/Alexander.Sick/Vivado/ece281-lab5
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11116 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12736 C:\Users\Alexander.Sick\Vivado\ece281-lab5\basic_cpu.xpr
 # Log file: C:/Users/Alexander.Sick/Vivado/ece281-lab5/vivado.log
 # Journal file: C:/Users/Alexander.Sick/Vivado/ece281-lab5\vivado.jou
 #-----------------------------------------------------------
@@ -16,11 +16,541 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 862.523 ; gain = 144.008
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 822.387 ; gain = 97.965
 update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Tue May  7 10:11:51 2024] Launched synth_1...
+[Wed May  8 10:17:51 2024] Launched synth_1...
 Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/synth_1/runme.log
-[Tue May  7 10:11:51 2024] Launched impl_1...
+[Wed May  8 10:17:51 2024] Launched impl_1...
 Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/impl_1/runme.log
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ALU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ALU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 846655f69311450f8a61d78ff6805056 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ALU_tb_behav xil_defaultlib.ALU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.twoToOneMUX [twotoonemux_default]
+Compiling architecture behavioral of entity xil_defaultlib.oneBitFullAdder [onebitfulladder_default]
+Compiling architecture behavioral of entity xil_defaultlib.aluFullAdder [alufulladder_default]
+Compiling architecture behavioral of entity xil_defaultlib.aluFourToOneMUX [alufourtoonemux_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture test_bench of entity xil_defaultlib.alu_tb
+Built simulation snapshot ALU_tb_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.sim/sim_1/behav/xsim/xsim.dir/ALU_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed May  8 10:27:39 2024...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 839.832 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ALU_tb_behav -key {Behavioral:sim_1:Functional:ALU_tb} -tclbatch {ALU_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source ALU_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ALU_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 855.559 ; gain = 15.727
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: top_basys3
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 965.945 ; gain = 107.176
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_basys3' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:42]
+INFO: [Synth 8-3491] module 'controller_fsm' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/controller_fsm.vhd:34' bound to instance 'controller_fsm_inst' of component 'controller_fsm' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'controller_fsm' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/controller_fsm.vhd:41]
+INFO: [Synth 8-226] default block is never used [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/controller_fsm.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'controller_fsm' (1#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/controller_fsm.vhd:41]
+	Parameter k_DIV bound to: 80000 - type: integer 
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:53' bound to instance 'clock_divider_inst' of component 'clock_divider' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'clock_divider' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:63]
+	Parameter k_DIV bound to: 80000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_divider' (2#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:63]
+INFO: [Synth 8-3491] module 'wire_Register' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/wire_Register.vhd:34' bound to instance 'register_A_inst' of component 'wire_Register' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'wire_Register' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/wire_Register.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'wire_Register' (3#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/wire_Register.vhd:41]
+INFO: [Synth 8-3491] module 'wire_Register' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/wire_Register.vhd:34' bound to instance 'register_B_inst' of component 'wire_Register' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:199]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:40' bound to instance 'ALU_inst' of component 'ALU' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:49]
+INFO: [Synth 8-3491] module 'twoToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:34' bound to instance 'adder_MUX_inst' of component 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'twoToOneMUX' (4#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:41]
+INFO: [Synth 8-3491] module 'aluFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:36' bound to instance 'fullAdder_inst' of component 'aluFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'aluFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA0' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'oneBitFullAdder' (5#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA1' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:67]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA2' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:75]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA3' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:83]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA4' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:91]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA5' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:99]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA6' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:107]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA7' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:115]
+INFO: [Synth 8-256] done synthesizing module 'aluFullAdder' (6#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'twoToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:34' bound to instance 'shiftMUX_inst' of component 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:110]
+INFO: [Synth 8-3491] module 'aluFourToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:34' bound to instance 'fourToOneMUX_inst' of component 'aluFourToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'aluFourToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'aluFourToOneMUX' (7#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:43]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:145]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:148]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:148]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (8#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:49]
+INFO: [Synth 8-3491] module 'TopBasysMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/TopBasysMUX.vhd:34' bound to instance 'TopBasysMUX_inst' of component 'TopBasysMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:216]
+INFO: [Synth 8-638] synthesizing module 'TopBasysMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/TopBasysMUX.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'TopBasysMUX' (9#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/TopBasysMUX.vhd:43]
+INFO: [Synth 8-3491] module 'twoscomp_decimal' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/twoscomp_decimal.vhd:11' bound to instance 'twoscomp_decimal_inst' of component 'twoscomp_decimal' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:226]
+INFO: [Synth 8-638] synthesizing module 'twoscomp_decimal' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/twoscomp_decimal.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'twoscomp_decimal' (10#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/twoscomp_decimal.vhd:21]
+	Parameter k_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'TDM4' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/TDM4.vhd:56' bound to instance 'TDM4_inst' of component 'TDM4' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:235]
+INFO: [Synth 8-638] synthesizing module 'TDM4' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/TDM4.vhd:69]
+	Parameter k_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TDM4' (11#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/TDM4.vhd:69]
+INFO: [Synth 8-3491] module 'sevenSegDecoder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:34' bound to instance 'sevenSegDecoder_inst' of component 'sevenSegDecoder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:247]
+INFO: [Synth 8-638] synthesizing module 'sevenSegDecoder' [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:39]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_S_reg' in module 'sevenSegDecoder' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:42]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_S_reg' in module 'sevenSegDecoder' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:57]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_S_reg' in module 'sevenSegDecoder' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:64]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_S_reg' in module 'sevenSegDecoder' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:71]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_S_reg' in module 'sevenSegDecoder' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:78]
+INFO: [Synth 8-256] done synthesizing module 'sevenSegDecoder' (12#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab2/src/hdl/sevenSegDecoder.vhd:39]
+INFO: [Synth 8-3491] module 'anode_MUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/anode_MUX.vhd:34' bound to instance 'anode_MUX_inst' of component 'anode_MUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:253]
+INFO: [Synth 8-638] synthesizing module 'anode_MUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/anode_MUX.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'anode_MUX' (13#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/anode_MUX.vhd:47]
+INFO: [Synth 8-3491] module 'sevenSegDecoder_neg' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/sevenSegDecoder_neg.vhd:34' bound to instance 'sevenSegDecoder_neg_inst' of component 'sevenSegDecoder_neg' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:269]
+INFO: [Synth 8-638] synthesizing module 'sevenSegDecoder_neg' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/sevenSegDecoder_neg.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'sevenSegDecoder_neg' (14#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/sevenSegDecoder_neg.vhd:39]
+INFO: [Synth 8-3491] module 'seg_MUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/seg_MUX.vhd:34' bound to instance 'seg_MUX_inst' of component 'seg_MUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:275]
+INFO: [Synth 8-638] synthesizing module 'seg_MUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/seg_MUX.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'seg_MUX' (15#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/seg_MUX.vhd:41]
+	Parameter k_DIV bound to: 12500000 - type: integer 
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:53' bound to instance 'controller_clk_div_inst' of component 'clock_divider' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'clock_divider__parameterized1' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:63]
+	Parameter k_DIV bound to: 12500000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_divider__parameterized1' (15#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/clock_divider.vhd:63]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'led_reg' in module 'top_basys3' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:299]
+INFO: [Synth 8-256] done synthesizing module 'top_basys3' (16#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/top_basys3.vhd:42]
+WARNING: [Synth 8-3917] design top_basys3 has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_basys3 has port led[4] driven by constant 0
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1011.039 ; gain = 152.270
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1011.039 ; gain = 152.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1011.039 ; gain = 152.270
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 8 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1334.809 ; gain = 476.039
+65 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1334.809 ; gain = 476.039
+set_property top ALU [current_fileset]
+update_compile_order -fileset sources_1
+close_design
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: ALU
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1334.809 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:49]
+INFO: [Synth 8-3491] module 'twoToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:34' bound to instance 'adder_MUX_inst' of component 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'twoToOneMUX' (1#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:41]
+INFO: [Synth 8-3491] module 'aluFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:36' bound to instance 'fullAdder_inst' of component 'aluFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'aluFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA0' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'oneBitFullAdder' (2#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA1' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:67]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA2' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:75]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA3' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:83]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA4' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:91]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA5' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:99]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA6' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:107]
+INFO: [Synth 8-3491] module 'oneBitFullAdder' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/oneBitFullAdder.vhd:36' bound to instance 'fullA7' of component 'oneBitFullAdder' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:115]
+INFO: [Synth 8-256] done synthesizing module 'aluFullAdder' (3#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFullAdder.vhd:44]
+INFO: [Synth 8-3491] module 'twoToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/twoToOneMUX.vhd:34' bound to instance 'shiftMUX_inst' of component 'twoToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:110]
+INFO: [Synth 8-3491] module 'aluFourToOneMUX' declared at 'C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:34' bound to instance 'fourToOneMUX_inst' of component 'aluFourToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'aluFourToOneMUX' [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'aluFourToOneMUX' (4#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.srcs/sources_1/new/aluFourToOneMUX.vhd:43]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:145]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:148]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'o_flags_reg' in module 'ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:148]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (5#1) [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/ALU.vhd:49]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1334.809 ; gain = 0.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1334.809 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1334.809 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Alexander.Sick/Vivado/ece281-lab5/src/hdl/Basys3_Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1348.676 ; gain = 13.867
+25 Infos, 79 Warnings, 76 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1348.676 ; gain = 13.867
+set_property top top_basys3 [current_fileset]
+update_compile_order -fileset sources_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Wed May  8 14:50:23 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/synth_1/runme.log
+[Wed May  8 14:50:23 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Wed May  8 14:52:24 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/synth_1/runme.log
+[Wed May  8 14:52:24 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Alexander.Sick/Vivado/ece281-lab5/basic_cpu.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May  8 17:34:39 2024...
